@@ -1,6 +1,6 @@
 import { addInner } from "https://bukulapak.github.io/element/process.js";
 import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
-import { isiTabel } from "./table.js";
+import { isiTabel } from "./temp/table.js";
 export function isiTablePresensi(results) {
     results.forEach(isiRow);
 }
@@ -11,7 +11,7 @@ function isiRow(value) {
             .replace("#JABATAN#", value.biodata.jabatan)
             .replace("#LOKASI#", value.location)
             .replace("#STATUS#", value.checkin)
-            .replace("#HARIKERJA#", value.biodata.hari_kerja?value.biodata.hari_kerja[0].hari_kerjs :"#HARIKERJA")
+            .replace("#HARIKERJA#", value.biodata.hari_kerja? value.biodata.hari_kerja[0].hari_kerjs :"#HARIKERJA")
             .replace("#JAMKERJA#", value.biodata.jam_kerja ? value.biodata.jam_kerja[0].durasi : "#JAMKERJA#")
             .replace("#JAMMASUK#", value.biodata.jam_kerja ? value.biodata.jam_kerja[0].jam_masuk : "#JAMMASUK#")
             .replace("#JAMKELUAR#", value.biodata.jam_kerja ? value.biodata.jam_kerja[0].jam_kerja : "#JAMKELUAR#")
